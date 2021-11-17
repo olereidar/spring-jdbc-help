@@ -1,0 +1,16 @@
+spring:
+  profiles:
+    active: ${APP_ENV:local}
+  datasource:
+    url: jdbc:postgresql://${PG_DB_HOST:localhost}:${PG_DB_PORT:5432}/jdbc
+    username: ${PG_DB_USERNAME:dummy}
+    password: ${PG_DB_PASSWORD:dummy}
+    driverClassName: org.postgresql.Driver
+  sql:
+    init:
+      platform: postgresql
+  flyway:
+    url: ${spring.datasource.url}
+    locations: classpath:db/migration
+    user: ${spring.datasource.username}
+    password: ${spring.datasource.password}

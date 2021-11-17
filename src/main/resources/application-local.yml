@@ -1,0 +1,8 @@
+spring:
+  datasource:
+    username: jdbc
+    password: 1814
+
+logging:
+  level:
+    org.springframework.jdbc: TRACE
